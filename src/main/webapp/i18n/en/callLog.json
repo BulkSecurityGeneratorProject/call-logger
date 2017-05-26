@@ -1,0 +1,30 @@
+{
+    "callLoggerApp": {
+        "callLog" : {
+            "home": {
+                "title": "Call Logs",
+                "createLabel": "Create a new Call Log",
+                "createOrEditLabel": "Create or edit a Call Log"
+            },
+            "created": "A new Call Log is created with identifier {{ param }}",
+            "updated": "A Call Log is updated with identifier {{ param }}",
+            "deleted": "A Call Log is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Call Log {{ id }}?"
+            },
+            "detail": {
+                "title": "Call Log"
+            },
+            "phoneNumber": "Phone Number",
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "transcript": "Transcript",
+            "recording": "Recording",
+            "direction": "Direction",
+            "notes": "Notes",
+            "startTime": "Start Time",
+            "endTime": "End Time",
+            "callBack": "Call Back"
+        }
+    }
+}

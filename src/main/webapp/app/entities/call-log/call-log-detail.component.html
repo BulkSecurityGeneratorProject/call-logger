@@ -1,0 +1,61 @@
+
+<div *ngIf="callLog">
+    <h2><span jhiTranslate="callLoggerApp.callLog.detail.title">Call Log</span> {{callLog.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="callLoggerApp.callLog.phoneNumber">Phone Number</span></dt>
+        <dd>
+            <span>{{callLog.phoneNumber}}</span>
+        </dd>
+        <dt><span jhiTranslate="callLoggerApp.callLog.firstName">First Name</span></dt>
+        <dd>
+            <span>{{callLog.firstName}}</span>
+        </dd>
+        <dt><span jhiTranslate="callLoggerApp.callLog.lastName">Last Name</span></dt>
+        <dd>
+            <span>{{callLog.lastName}}</span>
+        </dd>
+        <dt><span jhiTranslate="callLoggerApp.callLog.transcript">Transcript</span></dt>
+        <dd>
+            <span>{{callLog.transcript}}</span>
+        </dd>
+        <dt><span jhiTranslate="callLoggerApp.callLog.recording">Recording</span></dt>
+        <dd>
+            <span>{{callLog.recording}}</span>
+        </dd>
+        <dt><span jhiTranslate="callLoggerApp.callLog.direction">Direction</span></dt>
+        <dd>
+            <span jhiTranslate="{{'callLoggerApp.Direction.' + callLog.direction}}">{{callLog.direction}}</span>
+        </dd>
+        <dt><span jhiTranslate="callLoggerApp.callLog.notes">Notes</span></dt>
+        <dd>
+            <span>{{callLog.notes}}</span>
+        </dd>
+        <dt><span jhiTranslate="callLoggerApp.callLog.startTime">Start Time</span></dt>
+        <dd>
+            <span>{{callLog.startTime | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="callLoggerApp.callLog.endTime">End Time</span></dt>
+        <dd>
+            <span>{{callLog.endTime | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="callLoggerApp.callLog.callBack">Call Back</span></dt>
+        <dd>
+            <span>{{callLog.callBack | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'call-log/'+ callLog.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

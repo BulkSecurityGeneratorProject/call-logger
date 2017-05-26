@@ -1,0 +1,93 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myCallLogLabel" jhiTranslate="callLoggerApp.callLog.home.createOrEditLabel">Create or edit a Call Log</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!callLog.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="callLog.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="callLoggerApp.callLog.phoneNumber" for="field_phoneNumber">Phone Number</label>
+            <input type="text" class="form-control" name="phoneNumber" id="field_phoneNumber"
+                [(ngModel)]="callLog.phoneNumber"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="callLoggerApp.callLog.firstName" for="field_firstName">First Name</label>
+            <input type="text" class="form-control" name="firstName" id="field_firstName"
+                [(ngModel)]="callLog.firstName"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="callLoggerApp.callLog.lastName" for="field_lastName">Last Name</label>
+            <input type="text" class="form-control" name="lastName" id="field_lastName"
+                [(ngModel)]="callLog.lastName"
+             />
+        </div>
+        <!--
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="callLoggerApp.callLog.transcript" for="field_transcript">Transcript</label>
+            <input type="text" class="form-control" name="transcript" id="field_transcript"
+                [(ngModel)]="callLog.transcript"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="callLoggerApp.callLog.recording" for="field_recording">Recording</label>
+            <input type="text" class="form-control" name="recording" id="field_recording"
+                [(ngModel)]="callLog.recording"
+             />
+        </div>
+        -->
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="callLoggerApp.callLog.direction" for="field_direction">Direction</label>
+            <select class="form-control" name="direction" [(ngModel)]="callLog.direction" id="field_direction" >
+                <option value="INCOMING" jhiTranslate="callLoggerApp.Direction.INCOMING">INCOMING</option>
+                <option value="OUTGOING" jhiTranslate="callLoggerApp.Direction.OUTGOING">OUTGOING</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="callLoggerApp.callLog.notes" for="field_notes">Notes</label>
+            <input type="text" class="form-control" name="notes" id="field_notes"
+                [(ngModel)]="callLog.notes"
+             />
+        </div>
+        <!--
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="callLoggerApp.callLog.startTime" for="field_startTime">Start Time</label>
+            <div class="d-flex">
+                <input id="field_startTime" type="datetime-local" class="form-control" name="startTime" [(ngModel)]="callLog.startTime"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="callLoggerApp.callLog.endTime" for="field_endTime">End Time</label>
+            <div class="d-flex">
+                <input id="field_endTime" type="datetime-local" class="form-control" name="endTime" [(ngModel)]="callLog.endTime"
+                  />
+            </div>
+        </div>
+        -->
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="callLoggerApp.callLog.callBack" for="field_callBack">Call Back</label>
+            <div class="d-flex">
+                <input id="field_callBack" type="datetime-local" class="form-control" name="callBack" [(ngModel)]="callLog.callBack"
+                  />
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

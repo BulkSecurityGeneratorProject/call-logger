@@ -1,0 +1,51 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "phoneNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "firstName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "transcript",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "recording",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "direction",
+            "fieldType": "Direction",
+            "fieldValues": "INCOMING, OUTGOING"
+        },
+        {
+            "fieldName": "notes",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "startTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "endTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "callBack",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "call_log",
+    "pagination": "pagination"
+}

@@ -1,0 +1,9 @@
+{
+    "callLoggerApp": {
+        "Direction" : {
+            "null": "",
+            "INCOMING": "INCOMING",
+            "OUTGOING": "OUTGOING"
+        }
+    }
+}
